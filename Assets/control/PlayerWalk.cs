@@ -4,99 +4,97 @@ using UnityEngine;
 
 public class PlayerWalk : MonoBehaviour
 {
-    public float moveSpeed = 5f;        // Horizontal movement speed
-    public float jumpForce = 15f;       // Jump force for vertical movement
-    //public Animator animator;           // Animator for controlling animations
+    public float moveSpeed = 5f;           // Horizontal movement speed
+    public float jumpForce = 15f;         // Jump force for vertical movement
+    public Animator animator;             // Animator for controlling animations
 
-    private Rigidbody2D rb;             // Rigidbody2D component
-    private bool isFacingRight = true;  // Track whether the player is facing right
-    private bool isGrounded;            // Check if the player is grounded
-    private bool canDoubleJump;         // Check if the player can double jump
-    private bool isJumping;             // Check if the player is currently jumping
+    private Rigidbody2D rb;               // Rigidbody2D component
+    private bool isFacingRight = true;    // Track whether the player is facing right
+    private bool isGrounded;               // Check if the player is grounded
+    private bool canDoubleJump;            // Check if the player can double jump
+    private bool isJumping;               // Check if the player is currently jumping
+    private bool isMoving;               // Check if the player is moving
 
-    private Transform groundCheck;      // Ground check position
+    private Transform groundCheck;        // Ground check position
     public float groundCheckRadius = 0.2f; // Radius for checking ground
-    private LayerMask groundLayer;      // Layer used to detect ground
+    private LayerMask groundLayer;        // Layer used to detect ground
 
     void Start()
     {
-        // Automatically get references to Rigidbody2D, groundCheck, and groundLayer
-        rb = GetComponent<Rigidbody2D>();                  // Get the Rigidbody2D component of the player.
-        groundCheck = transform.Find("GroundCheck");       // Find the ground check position (assumes a child object named "GroundCheck").
-        groundLayer = LayerMask.GetMask("Ground");         // Set the ground layer (replace "Ground" with the actual layer name).
+        // Automatically get references
+        rb = GetComponent<Rigidbody2D>();
+        groundCheck = transform.Find("GroundCheck");
+        groundLayer = LayerMask.GetMask("Ground");
 
-        rb.freezeRotation = true; // Lock the character's rotation.
+        rb.freezeRotation = true; // Lock the character's rotation
     }
 
     void Update()
     {
-        // Get the horizontal input (A/D or Left/Right arrow keys)
+        // Get horizontal input
         float horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        // Handle character flip when moving left or right
+        // Handle character flip
         if ((horizontalInput < 0 && isFacingRight) || (horizontalInput > 0 && !isFacingRight))
         {
             FlipCharacter();
         }
 
-        // Check if the player is grounded and handle jumping logic
+        // Check if grounded and handle jumping
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-
-        // Jump input using the Space Bar (or "Jump" button in Input Manager)
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isGrounded)
             {
                 Jump();
-                canDoubleJump = true; // Allow double jump after the first jump
+                canDoubleJump = true;
             }
             else if (canDoubleJump)
             {
                 Jump();
-                canDoubleJump = false; // Disable double jump after second jump
+                canDoubleJump = false;
             }
         }
 
-        // Control the animation based on whether the player is jumping or not
-        if (!isGrounded)
-        {
-            isJumping = true;
-        }
-        else
-        {
-            isJumping = false;
-        }
+        // Update isMoving based on horizontal input
+        isMoving = Mathf.Abs(horizontalInput) > 0.1f;
 
-        // Update the Animator
-        //animator.SetBool("isJumping", isJumping); // Set jumping state
-        //animator.SetFloat("speed", Mathf.Abs(rb.velocity.x)); // Set speed based on horizontal velocity
+        // Update animation based on movement and jump state
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput)); // Set speed based on horizontal velocity
+        animator.SetBool("IsJumping", !isGrounded); // Set jumping state based on grounded check
+        animator.SetBool("IsMoving", isMoving); // Set moving state based on isMoving
+
+        // Update animation on key press
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        {
+            animator.SetTrigger("IsMoving"); // Set a trigger for movement animation
+        }
     }
 
     void FixedUpdate()
     {
-        // Get the horizontal input and apply horizontal movement
+        // Apply horizontal movement
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
     }
 
     void Jump()
     {
-        // Apply vertical force to jump
+        // Apply vertical force
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
-        // Debug to check if the jump function is being called and the velocity is being set
         Debug.Log("Jump executed. Velocity: " + rb.velocity);
     }
 
     private void FlipCharacter()
     {
-        // Toggle the facing direction flag
+        // Toggle facing direction and update animation parameter
         isFacingRight = !isFacingRight;
+        animator.SetTrigger("Flip"); // Use a trigger for flipping animation
 
-        // Invert the X scale to flip the character horizontally
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        // Invert X scale to flip character (optional)
+        // Vector3 scale = transform.localScale;
+        // scale.x *= -1;
+        // transform.localScale = scale;
     }
-
 }
