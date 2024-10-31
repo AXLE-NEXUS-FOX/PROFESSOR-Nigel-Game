@@ -166,6 +166,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 63666376564751951, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_text
+      value: Secret?
+      objectReference: {fileID: 0}
+    - target: {fileID: 63666376564751951, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.936759
+      objectReference: {fileID: 0}
+    - target: {fileID: 63666376564751951, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 63666376564751951, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 63666376564751951, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4293853439
+      objectReference: {fileID: 0}
+    - target: {fileID: 104122816364153960, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: themeController
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 173547034864491449, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -185,6 +209,26 @@ PrefabInstance:
     - target: {fileID: 173547034864491449, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895157126382999845, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.008945942
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895157126382999845, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895157126382999845, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895157126382999845, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278386432
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007965897548557058, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: themeController
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3073436478644387027, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
       propertyPath: m_AnchorMax.y
@@ -269,6 +313,26 @@ PrefabInstance:
     - target: {fileID: 7308381637634795417, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383068149118677064, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: themeController
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486731081095905903, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.03091347
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486731081095905903, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486731081095905903, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.6897275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486731081095905903, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278714544
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
