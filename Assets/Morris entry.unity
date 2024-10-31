@@ -1483,7 +1483,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level One
+          m_StringArgument: Morris L1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1114655606
@@ -1644,10 +1644,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You...Found my easter egg!!!
+  m_text: 'You...Found my easter egg YaY!!!
 
-    well in that case  i have to givee you
-    something for finding it
+    well in that case  i have to give
+    you something for finding it
 
 
     when you are ready click the play button'

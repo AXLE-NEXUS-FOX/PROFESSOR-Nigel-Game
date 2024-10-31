@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Morris entry.unity
     guid: 5bda090948dc0bc42bb0eb6f5e6ed823
+  - enabled: 1
+    path: Assets/Morris L1.unity
+    guid: 2d1a047a96be59a4186c216db5706f9a
   m_configObjects: {}
