@@ -77,7 +77,7 @@ MonoBehaviour:
     value: 37.4
   mixerRedOutRedIn:
     overrideState: 1
-    value: 100
+    value: 35
   mixerRedOutGreenIn:
     overrideState: 1
     value: 0
