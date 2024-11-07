@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1107347502071274114, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2895157126382999845, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
       propertyPath: m_fontColor.b
       value: 0.008945942
