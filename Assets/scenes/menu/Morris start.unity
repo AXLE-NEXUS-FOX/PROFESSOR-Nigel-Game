@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: m_Range
       value: 26.756775
       objectReference: {fileID: 0}
+    - target: {fileID: 1107347502071274114, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2362828589762050470, guid: 3a185725044013b48a05fe9a9a05be66, type: 3}
       propertyPath: m_text
       value: EASTER EGG :3
